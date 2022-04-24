@@ -12,7 +12,7 @@ contract DeployWithCreate2 {
 contract Create2Factory {
     event Deploy(address _address);
 
-    function deploy(uint256 _salt) external {
+    function deploy(uint256 _salt) public {
         DeployWithCreate2 _contract = new DeployWithCreate2{salt: bytes32(_salt)}(msg.sender);
 
         emit Deploy(address(_contract));
