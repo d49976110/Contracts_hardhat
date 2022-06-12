@@ -24,8 +24,8 @@ interface IERC20Permit {
         uint256 value,
         uint256 deadline,
         uint8 v,
-        uint32 r,
-        uint32 s
+        bytes32 r,
+        bytes32 s
     ) external;
 
     event Transfer(address indexed from, address indexed to, uint256 value);

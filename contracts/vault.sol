@@ -19,8 +19,8 @@ contract Vault {
         uint256 amount,
         uint256 deadline,
         uint8 v,
-        uint32 r,
-        uint32 s
+        bytes32 r,
+        bytes32 s
     ) external {
         token.permit(msg.sender, address(this), amount, deadline, v, r, s);
         token.transferFrom(msg.sender, address(this), amount);
