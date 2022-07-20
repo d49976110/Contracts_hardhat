@@ -93,6 +93,7 @@ contract MultiSigWallet {
 
         transaction.executed = true;
 
+        //(bool success,bytes memory result)= addr.call(abi.encodeWithSignature("myFunction(uint,address)", 10, msg.sender));
         (bool success, ) = transaction.to.call{value: transaction.value}(transaction.data);
         require(success, 'tx failed');
 
