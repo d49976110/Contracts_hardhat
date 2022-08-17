@@ -2,6 +2,7 @@
 pragma solidity ^0.8;
 
 import '@rari-capital/solmate/src/tokens/ERC20.sol';
+import 'hardhat/console.sol';
 
 contract Token is ERC20 {
     constructor() ERC20('TEST', 'TST', 6) {}

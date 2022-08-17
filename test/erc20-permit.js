@@ -4,7 +4,7 @@ const {ethers} = require('hardhat');
 //uniswap v3
 async function getPermitSignature(signer, token, spender, value, deadline) {
     const [nonce, name, version, chainId] = await Promise.all([token.nonces(signer.address), token.name(), '1', signer.getChainId()]);
-    console.log('nonce:', nonce.toString(), 'name:', name, 'version:', version, 'signer:', signer);
+    // console.log('nonce:', nonce.toString(), 'name:', name, 'version:', version, 'signer:', signer);
     return ethers.utils.splitSignature(
         await signer._signTypedData(
             {
